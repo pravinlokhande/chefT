@@ -23,6 +23,10 @@ Chef Infra installation instructions:
 27 ll
 28 unzip chef-starter_6.zip
 
+meanwhile you need to create chef account to https://manage.chef.io/. 
+then create org.
+
+
 
 43 cd /root/.ssh/
 44 ll
