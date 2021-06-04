@@ -23,7 +23,7 @@ xi) Create SSH connection between WS and Node
 BOOTSTRAP
 =========
 xii) Go to workstation
-xiii) knife bootstrap 172.31.32.63 --connection-user root --ssh-identity-file /root/.ssh/id_rsa --node-name WebServer
+xiii) knife bootstrap <Node IP> --connection-user root --ssh-identity-file /root/.ssh/id_rsa --node-name WebServer
 xiv) Verify the Node status in the Chef Server
 xv) Vefify the chef-client version in Node
 
