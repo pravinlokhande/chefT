@@ -20,5 +20,5 @@ Goto Server
  Goto Nodes -> Run List -> Drag & drop
 
 Goto Node
-
- chef-client
+- Go to the /root/ dir
+ - run sudo chef-client
