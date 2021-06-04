@@ -1,0 +1,50 @@
+Chef Infra installation instructions:
+1) ssh to your ec2-user
+2) [root@ec2-ip ~]# history
+3 pwd
+4 wget https://packages.chef.io/files/stable/chefdk/4.13.3/el/8/chefdk-4.13.3-1.el7.x86_64.rpm
+5 ll
+6 sudo rpm -Uvh chefdk-4.13.3-1.el7.x86_64.rpm
+7 chef --version
+8 history
+
+15 mkdir git-repo
+16 cd git-repo
+17 git init --> if it fails then need to install git
+18 sudo yum install -y git  --> to install git
+19 git init
+20 ll
+21 git clone https://github.com/pravinlokhande/chefT.git
+22 ll
+23 cd chefT/
+24 ll
+25 mv chef-starter_6.zip /root/
+26 cd /root/
+27 ll
+28 unzip chef-starter_6.zip
+
+
+43 cd /root/.ssh/
+44 ll
+45 cat id_rsa.pub
+ssh-keygen
+copy id_rsa.pub of workstation to node server authorised keys.
+
+Workstation:
+sudo su
+cd /
+ssh-keygen
+cd /root/.ssh
+cat id_rsa.pub
+Note: Copy the secretkey file.
+
+Node1:
+sudo su
+cd /
+cd /root/.ssh
+nano authorized_keys & paste it here.
+
+Now test the connection from Workstation (ssh "public ip of node machine")
+
+
+for next steps, follow instructions from Chef-Notes-June.txt
