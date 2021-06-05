@@ -1,0 +1,31 @@
+
+
+1) chef generate cookbook http
+
+cd http
+
+2) chef generate template index.html
+
+3) vi template/index.html.erb
+put
+
+<html>
+<head><title>Hello from Raghu</title></head>
+<body>
+<h1> This is Template </h1>
+<p> Nice Job </p>
+</body>
+
+
+4) knife upload http
+
+5) sudo chef-client -z --runlist recipe["http"]
+
+
+6) knife node run_list add WebServer2 http
+
+
+7) in node machine, 
+execute chef-client
+
+8) curl localhost and see output
