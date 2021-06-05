@@ -1,0 +1,46 @@
+
+1) Add following code to cookbooks/<cookbook_name>/<receipe>/<receipe_file>
+
+package 'httpd'
+
+file '/var/www/html/index.html' do
+content '<html>
+<head><title>Hello from Raghu</title></head>
+<body>
+<h1> Congrats Raghu </h1>
+<p> Nice Job </p>
+</body>
+</html>'
+end
+
+service 'httpd' do
+action [:enable, :start]
+end
+
+2) in cookbook dir, run 'knife upload <cookbook_name>'
+
+3) go to node, and execute chef-client command.
+
+4) you must have install httpd service in your node machine.
+
+-------------------------------------------------------------------------
+
+# To get system ip
+curl ipconfig.io
+- Copy this ip and put your browser, if required ports are open then you should see page there
+- Otherwise, use 'curl localhost'
+
+
+# To add cookbook to the node run_list
+knife node run_list add <node_name> <cookbook_name>
+o/p: 
+WebServer2:
+  run_list: recipe[nginx]
+  
+# To get list of all nodes
+knife node list
+o: 
+WebServer
+WebServer2
+
+
